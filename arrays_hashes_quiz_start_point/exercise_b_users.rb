@@ -54,6 +54,37 @@ users = {
   }
 }
 
+p users ["Jonathan"][:twitter]
+
+p users ["Erik"][:home_town]
+
+p users ["Erik"][:lottery_numbers]
+p users ["Avril"][:pets][0][:species]
+p users ["Erik"][:lottery_numbers].min
+p users ["Avril"][:lottery_numbers]
+
+for numbers in users ["Avril"][:lottery_numbers]
+  p numbers if numbers.even?
+end
+
+users ["Erik"][:lottery_numbers].unshift(7)
+p users ["Erik"][:lottery_numbers]
+users ["Erik"][:home_town] = "Edinburgh"
+p users ["Erik"][:home_town]
+users ["Erik"][:pets].push(
+  {
+    :name => "Fluffy",
+    :species => "dog"
+  }
+)
+
+
+users ["Bob"] = {
+  :fav_food => "pizza"
+}
+
+p users
+
 # 1. Get Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
 # 2. Get Erik's hometown
 # 3. Get the array of Erik's lottery numbers
